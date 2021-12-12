@@ -19,7 +19,7 @@ public class Cat : MonoBehaviour
             Debug.Log("Flickittycat!");
             // rb.AddForce(new Vector2(0, 300));
             rb.velocity = new Vector2(0, 0);
-            rb.AddForce(new Vector2(0, 350));
+            rb.AddForce(new Vector2(0, 300));
         }
     }
 
