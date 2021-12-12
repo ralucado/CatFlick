@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private float moveSpeed;
     public Animator animator;
-    public bool right = true;
+    public bool direction = true;
     public int activeTouches;
     private void Start()
     {
@@ -25,6 +25,12 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void setWalkAnimation(bool moving, bool direction)
+    {
+        animator.SetBool("Idle", !moving);
+        animator.SetBool("Right", direction);
+        animator.SetBool("Left", !direction);
+    }
 
     // Update is called once per frame
     void Update()
@@ -41,30 +47,22 @@ public class Player : MonoBehaviour
                         if (touch.position.x < Screen.width / 2)
                         {
                             rb.velocity = new Vector2(-moveSpeed, 0f);
-                            right = false;
-                            animator.SetBool("Idle", false);
-                            animator.SetBool("Right", right);
-                            animator.SetBool("Left", !right);
-
+                            direction = false;
                         }
                         if (touch.position.x >= Screen.width / 2)
                         {
                             rb.velocity = new Vector2(moveSpeed, 0f);
-                            right = true;
-                            animator.SetBool("Idle", false);
-                            animator.SetBool("Right", right);
-                            animator.SetBool("Left", !right);
+                            direction = true;
                         }
+                        setWalkAnimation(true, direction);
                         break;
 
                     case TouchPhase.Ended:
                         --activeTouches;
+                        setWalkAnimation(false, direction);
                         if (activeTouches == 0)
                         {
                             rb.velocity = new Vector2(0f, 0f);
-                            animator.SetBool("Idle", true);
-                            animator.SetBool("Right", right);
-                            animator.SetBool("Left", !right);
                         }
                         break;
                 }
