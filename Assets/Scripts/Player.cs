@@ -16,6 +16,16 @@ public class Player : MonoBehaviour
         moveSpeed = 4;
     }
 
+    void OnTriggerEnter2D(Collider2D someObject)
+    {
+        if (someObject.CompareTag("Cat"))
+        {
+            Debug.Log("Prepare to Flickittycat!");
+            animator.SetTrigger("FlickRight");
+        }
+    }
+
+
     // Update is called once per frame
     void Update()
     {
@@ -26,6 +36,7 @@ public class Player : MonoBehaviour
                 switch (touch.phase)
                 {
                     case TouchPhase.Began:
+                        //Debug.Log("Click!");
                         ++activeTouches;
                         if (touch.position.x < Screen.width / 2)
                         {
