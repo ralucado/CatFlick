@@ -97,11 +97,11 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.4043634
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Mass: 0.35122436
+  m_LinearDrag: 1.6
+  m_AngularDrag: 3
+  m_GravityScale: 1.2
+  m_Material: {fileID: 6200000, guid: ce004e42de99808408dc90edaac8e42b, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -115,10 +115,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6742163999986095270}
-  - component: {fileID: 6742163999986095271}
+  - component: {fileID: 1416652517}
   m_Layer: 7
   m_Name: CatCollider
-  m_TagString: Untagged
+  m_TagString: Cat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,8 +137,8 @@ Transform:
   m_Father: {fileID: 6742163999071509093}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &6742163999986095271
-BoxCollider2D:
+--- !u!70 &1416652517
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -150,19 +150,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.3230306, y: -0.6460608}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.49, y: 3.86}
-    newSize: {x: 5.76, y: 8}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.8439386, y: 2.567878}
-  m_EdgeRadius: 0
+  m_Offset: {x: -0.21503077, y: -0.5403976}
+  m_Size: {x: 4.1436152, y: 2.3567817}
+  m_Direction: 1
 --- !u!1 &6742164000344671201
 GameObject:
   m_ObjectHideFlags: 0

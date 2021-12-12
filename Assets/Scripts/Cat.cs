@@ -6,7 +6,6 @@ public class Cat : MonoBehaviour
 {
     private Rigidbody2D rb;
 
-
     private void Start()
     {
         rb = GetComponentInParent<Rigidbody2D>();
@@ -19,7 +18,10 @@ public class Cat : MonoBehaviour
             Debug.Log("Flickittycat!");
             // rb.AddForce(new Vector2(0, 300));
             rb.velocity = new Vector2(0, 0);
-            rb.AddForce(new Vector2(0, 300));
+            rb.angularVelocity = 0;
+            float xDir = someObject.gameObject.transform.position.x - rb.position.x;
+            rb.AddForce(new Vector2(-xDir* 220, 420));
+            //Debug.DrawRay(rb.position, new Vector3(-xDir * 80, 320, 9), Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f), 10f, false);
         }
     }
 
@@ -27,6 +29,6 @@ public class Cat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
