@@ -7,6 +7,7 @@ public class Cat : MonoBehaviour
     private Rigidbody2D rb;
     public bool fromInside;
     public Animator animator;
+    public MonoBehaviour gameController;
 
     private void Start()
     {
@@ -34,6 +35,7 @@ public class Cat : MonoBehaviour
             Debug.Log("Scored a pointeroo!");
             animator.SetBool("Saved", true);
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
+            gameController.SendMessage("saveACat");
         }
 
     }

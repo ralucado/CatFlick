@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6742163999071509093}
   - component: {fileID: 6742163999071509092}
   - component: {fileID: 6742163999071509095}
+  - component: {fileID: 628488059}
   m_Layer: 7
   m_Name: Cat
   m_TagString: Cat
@@ -106,6 +107,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &628488059
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6742163999071509089}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 58d39366cb2c80f49a7bd3081acc4cd1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6742163999986095265
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,7 +186,7 @@ GameObject:
   - component: {fileID: 6742164000344671205}
   m_Layer: 8
   m_Name: CatTrigger
-  m_TagString: Untagged
+  m_TagString: Cat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -223,3 +243,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69f7c589251aaf74e9610714b6b7dbbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fromInside: 0
+  animator: {fileID: 628488059}
+  gameController: {fileID: 464079291380556224, guid: 0dd58c4a0d0a81746ba19dcf92dcd30e, type: 3}
