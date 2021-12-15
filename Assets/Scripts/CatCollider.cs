@@ -6,12 +6,20 @@ public class CatCollider : MonoBehaviour
 {
     private Rigidbody2D rb;
     public SpriteRenderer rend;
+    public GameObject gameController;
+
+
+    public void setGameController(GameObject gameControllerInstance)
+    {
+        gameController = gameControllerInstance;
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
             startFading();
+            gameController.SendMessage("killACat");
         }
     }
     IEnumerator FadeOut()
@@ -23,6 +31,7 @@ public class CatCollider : MonoBehaviour
             rend.material.color = c;
             yield return new WaitForSeconds(0.05f);
         }
+        Destroy(gameObject);
     }
 
     public void startFading()

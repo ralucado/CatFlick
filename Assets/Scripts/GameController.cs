@@ -19,7 +19,14 @@ public class GameController : MonoBehaviour
     {
         ++catsSaved;
         GameObject cat = Instantiate(catPrefab, new Vector3(Random.Range(-2.0f, 2.0f), 14, 0), Quaternion.identity);
-        cat.GetComponentInChildren<Cat>().SendMessage("setGameController", gameObject);
+        cat.BroadcastMessage("setGameController", gameObject);
+    }
+
+    public void killACat()
+    {
+        --catsSaved;
+        GameObject cat = Instantiate(catPrefab, new Vector3(Random.Range(-2.0f, 2.0f), 14, 0), Quaternion.identity);
+        cat.BroadcastMessage("setGameController", gameObject);
     }
 
     // Update is called once per frame
