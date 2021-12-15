@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,13 +6,13 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
     public Text scoreText;
-    private int catsSaved;
+    public int catsSaved;
     public GameObject catPrefab;
     // Start is called before the first frame update
     void Start()
     {
         catsSaved = 0;
-        scoreText.text = "cats saved: 0";
+        scoreText.text = "0 cats saved";
     }
 
     public void saveACat()
@@ -25,6 +25,8 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = "cats saved: " + catsSaved;
+        scoreText.text = catsSaved + " cats saved";
+        if (catsSaved == 69)
+            scoreText.text += "\n nice ( ͡° ͜ʖ ͡°)";
     }
 }
