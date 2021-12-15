@@ -1075,10 +1075,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jelly
       objectReference: {fileID: 0}
-    - target: {fileID: 5108850082767423761, guid: 85921815894f81747b7425d4489c4abb, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5108850082767423766, guid: 85921815894f81747b7425d4489c4abb, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1138,11 +1134,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6142271412175751140, guid: 411e7c2027cd2b442a6968d72c22e018, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 6142271412175751140, guid: 411e7c2027cd2b442a6968d72c22e018, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.26
+      value: -3.53
       objectReference: {fileID: 0}
     - target: {fileID: 6142271412175751140, guid: 411e7c2027cd2b442a6968d72c22e018, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1246,10 +1242,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6742163999071509089, guid: c5f274fb1786e4b47b4d423a346313bd, type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 6742163999071509089, guid: c5f274fb1786e4b47b4d423a346313bd, type: 3}
       propertyPath: m_Name
       value: Cat

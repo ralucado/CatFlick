@@ -7,6 +7,7 @@ TagManager:
   - Cat
   - Inner
   - Outer
+  - Ground
   layers:
   - Default
   - TransparentFX
