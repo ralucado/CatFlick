@@ -40,7 +40,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Left
     m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: FlickRight
+    m_ConditionEvent: Flick
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4649373715351709658}
@@ -48,7 +48,7 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_ExitTime: 0
   m_HasExitTime: 1
@@ -120,7 +120,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: FlickRight
+    m_ConditionEvent: Flick
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4573704184910300152}
@@ -128,7 +128,7 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_ExitTime: 0.42307693
   m_HasExitTime: 1
@@ -273,7 +273,7 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_ExitTime: 0.5833333
   m_HasExitTime: 1
@@ -324,7 +324,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Left
     m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: FlickRight
+    m_ConditionEvent: Flick
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4649373715351709658}
@@ -332,7 +332,7 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_ExitTime: 0.42307693
   m_HasExitTime: 1
@@ -363,7 +363,7 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_ExitTime: 0.5833333
   m_HasExitTime: 1
@@ -429,7 +429,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 1
     m_Controller: {fileID: 0}
-  - m_Name: FlickRight
+  - m_Name: Flick
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -471,7 +471,7 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_ExitTime: 0.5833333
   m_HasExitTime: 1
@@ -555,7 +555,7 @@ AnimatorStateMachine:
     m_Position: {x: 410, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7923044257025866916}
-    m_Position: {x: 70, y: 130, z: 0}
+    m_Position: {x: 30, y: 130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8869458897176870828}
     m_Position: {x: 460, y: -40, z: 0}
@@ -589,7 +589,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: FlickRight
+    m_ConditionEvent: Flick
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4573704184910300152}
@@ -597,7 +597,7 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_ExitTime: 0
   m_HasExitTime: 1

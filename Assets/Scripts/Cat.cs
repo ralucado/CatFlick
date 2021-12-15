@@ -14,6 +14,11 @@ public class Cat : MonoBehaviour
         gameController = gameControllerInstance;
     }
 
+    public void disableCollider()
+    {
+        GetComponent<Collider2D>().enabled = false;
+    }
+
     private void Start()
     {
         fromInside = true;
@@ -29,7 +34,7 @@ public class Cat : MonoBehaviour
             rb.velocity = new Vector2(0, 0);
             rb.angularVelocity = 0;
             float xDir = someObject.gameObject.transform.position.x - rb.position.x;
-            rb.AddForce(new Vector2(-xDir * 220, 400));
+            rb.AddForce(new Vector2(-xDir * 220, 420));
             //Debug.DrawRay(rb.position, new Vector3(-xDir * 80, 320, 9), Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f), 10f, false);
         }
         else if (someObject.CompareTag("Inner"))

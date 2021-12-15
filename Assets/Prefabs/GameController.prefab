@@ -44,4 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 0}
+  catsSaved: 0
   catPrefab: {fileID: 6742163999071509089, guid: c5f274fb1786e4b47b4d423a346313bd, type: 3}

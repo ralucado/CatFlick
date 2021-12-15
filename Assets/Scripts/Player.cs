@@ -18,10 +18,10 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D someObject)
     {
-        if (someObject.CompareTag("Cat"))
+        if (someObject.CompareTag("CatFlickTrigger"))
         {
             Debug.Log("Prepare to Flickittycat!");
-            animator.SetTrigger("FlickRight");
+            animator.SetTrigger("Flick");
         }
     }
 

@@ -12,7 +12,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         catsSaved = 0;
-        scoreText.text = "0 cats saved";
+        scoreText.text = catsSaved.ToString();
     }
 
     public void saveACat()
@@ -32,8 +32,8 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = catsSaved + " cats saved";
+        scoreText.text = catsSaved + "";
         if (catsSaved == 69)
-            scoreText.text += "\n nice ( ͡° ͜ʖ ͡°)";
+            scoreText.text += "\n nice";
     }
 }

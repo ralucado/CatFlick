@@ -18,20 +18,23 @@ public class CatCollider : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
+            gameObject.GetComponent<Collider2D>().enabled = false;
             startFading();
             gameController.SendMessage("killACat");
+            gameObject.transform.parent.gameObject.BroadcastMessage("disableCollider");
         }
     }
     IEnumerator FadeOut()
     {
-        for (float f = 1f; f >= -0.05f; f-=0.1f)
+        for (float f = 1f; f >= 0f; f-=0.1f)
         {
             Color c = rend.material.color;
             c.a = f;
             rend.material.color = c;
             yield return new WaitForSeconds(0.05f);
         }
-        Destroy(gameObject);
+        Destroy(gameObject.transform.parent.gameObject);
+
     }
 
     public void startFading()

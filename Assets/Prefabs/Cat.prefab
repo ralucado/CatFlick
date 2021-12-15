@@ -187,6 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 0}
+  gameController: {fileID: 0}
 --- !u!1 &6742164000344671201
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,7 +201,7 @@ GameObject:
   - component: {fileID: 6742164000344671205}
   m_Layer: 8
   m_Name: CatTrigger
-  m_TagString: Cat
+  m_TagString: CatFlickTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
