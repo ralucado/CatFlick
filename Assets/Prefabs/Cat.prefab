@@ -245,4 +245,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fromInside: 0
   animator: {fileID: 628488059}
-  gameController: {fileID: 464079291380556224, guid: 0dd58c4a0d0a81746ba19dcf92dcd30e, type: 3}
+  gameController: {fileID: 0}

@@ -363,17 +363,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85921815894f81747b7425d4489c4abb, type: 3}
---- !u!114 &597638308 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 464079291380556224, guid: 0dd58c4a0d0a81746ba19dcf92dcd30e, type: 3}
+--- !u!1 &597638307 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 464079291380556231, guid: 0dd58c4a0d0a81746ba19dcf92dcd30e, type: 3}
   m_PrefabInstance: {fileID: 464079291907661156}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5258e1aa100d79f40aad6eea25c4d3c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &613909541
 GameObject:
   m_ObjectHideFlags: 0
@@ -1013,6 +1007,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 464079291380556224, guid: 0dd58c4a0d0a81746ba19dcf92dcd30e, type: 3}
+      propertyPath: catPrefab
+      value: 
+      objectReference: {fileID: 6742163999071509089, guid: c5f274fb1786e4b47b4d423a346313bd, type: 3}
+    - target: {fileID: 464079291380556224, guid: 0dd58c4a0d0a81746ba19dcf92dcd30e, type: 3}
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 515400172}
@@ -1258,11 +1256,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6742163999071509093, guid: c5f274fb1786e4b47b4d423a346313bd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.18
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6742163999071509093, guid: c5f274fb1786e4b47b4d423a346313bd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6742163999071509093, guid: c5f274fb1786e4b47b4d423a346313bd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1299,6 +1297,6 @@ PrefabInstance:
     - target: {fileID: 6742164000344671205, guid: c5f274fb1786e4b47b4d423a346313bd, type: 3}
       propertyPath: gameController
       value: 
-      objectReference: {fileID: 597638308}
+      objectReference: {fileID: 597638307}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5f274fb1786e4b47b4d423a346313bd, type: 3}

@@ -7,7 +7,12 @@ public class Cat : MonoBehaviour
     private Rigidbody2D rb;
     public bool fromInside;
     public Animator animator;
-    public MonoBehaviour gameController;
+    public GameObject gameController;
+
+    public void setGameController(GameObject gameControllerInstance)
+    {
+        gameController = gameControllerInstance;
+    }
 
     private void Start()
     {
