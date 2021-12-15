@@ -142,7 +142,7 @@ GameObject:
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1138,11 +1138,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6142271412175751140, guid: 411e7c2027cd2b442a6968d72c22e018, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.526
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6142271412175751140, guid: 411e7c2027cd2b442a6968d72c22e018, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.324
+      value: -3.26
       objectReference: {fileID: 0}
     - target: {fileID: 6142271412175751140, guid: 411e7c2027cd2b442a6968d72c22e018, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1247,6 +1247,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6742163999071509089, guid: c5f274fb1786e4b47b4d423a346313bd, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742163999071509089, guid: c5f274fb1786e4b47b4d423a346313bd, type: 3}
       propertyPath: m_Name
       value: Cat
       objectReference: {fileID: 0}
@@ -1260,7 +1264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6742163999071509093, guid: c5f274fb1786e4b47b4d423a346313bd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14
+      value: 13.77
       objectReference: {fileID: 0}
     - target: {fileID: 6742163999071509093, guid: c5f274fb1786e4b47b4d423a346313bd, type: 3}
       propertyPath: m_LocalPosition.z

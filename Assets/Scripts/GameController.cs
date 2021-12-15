@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour
     public void saveACat()
     {
         ++catsSaved;
-        GameObject cat = Instantiate(catPrefab, new Vector3(0, 14, 0), Quaternion.identity);
+        GameObject cat = Instantiate(catPrefab, new Vector3(Random.Range(-2.0f, 2.0f), 14, 0), Quaternion.identity);
         cat.GetComponentInChildren<Cat>().SendMessage("setGameController", gameObject);
     }
 
