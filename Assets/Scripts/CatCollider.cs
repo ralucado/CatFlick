@@ -5,7 +5,7 @@ using UnityEngine;
 public class CatCollider : MonoBehaviour
 {
     private Rigidbody2D rb;
-    public SpriteRenderer rend;
+    private SpriteRenderer rend;
     public GameObject gameController;
 
     void Start()

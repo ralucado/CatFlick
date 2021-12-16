@@ -12,9 +12,13 @@ public class GameController : MonoBehaviour
     public GameObject catPrefab;
     private float lastTimeInterval;
     int extraCats;
+    AudioSource audioSource;
+    public AudioClip purr;
+    public AudioClip die;
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         catsSaved = 0;
         catsDead = 0;
         updateText(scoreText, catsSaved);
@@ -37,12 +41,14 @@ public class GameController : MonoBehaviour
     public void saveACat()
     {
         ++catsSaved;
+        audioSource.PlayOneShot(purr, 1);
         newCat();
     }
 
     public void killACat()
     {
         ++catsDead;
+        audioSource.PlayOneShot(die, 0.3f);
         newCat();
     }
 

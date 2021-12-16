@@ -10,12 +10,14 @@ public class Cat : MonoBehaviour
     public Animator animator;
     public GameObject gameController;
     private Vector3 shakePos;
-
+    public AudioClip bounce;
+    AudioSource audioSource;
     private void Start()
     {
         fromInside = true;
         shake = false;
         rb = GetComponentInParent<Rigidbody2D>();
+        audioSource = GetComponentInParent<AudioSource>();
     }
 
     public void setGameController(GameObject gameControllerInstance)
@@ -31,6 +33,7 @@ public class Cat : MonoBehaviour
             rb.angularVelocity = 0;
             float xDir = someObject.gameObject.transform.position.x - rb.position.x;
             rb.AddForce(new Vector2(-xDir * 220, 420));
+            audioSource.PlayOneShot(bounce, 0.7F);
         }
         else if (someObject.CompareTag("Inner"))
             fromInside = true;
