@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     {
         if (someObject.CompareTag("CatFlickTrigger"))
         {
-            Debug.Log("Prepare to Flickittycat!");
+            //Debug.Log("Prepare to Flickittycat!");
             animator.SetTrigger("Flick");
         }
     }

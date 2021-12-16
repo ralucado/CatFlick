@@ -14,31 +14,45 @@ public class GameController : MonoBehaviour
     void Start()
     {
         catsSaved = 0;
-        scoreText.text = catsSaved.ToString();
         catsDead = 0;
-        dedText.text = catsDead.ToString();
+        updateText(scoreText, catsSaved);
+        updateText(dedText, catsDead);
+    }
 
+    private void updateText(Text text, int num)
+    {
+        text.text = num.ToString();
+    }
+
+    private void newCat()
+    {
+        GameObject cat = Instantiate(catPrefab, new Vector3(Random.Range(-2.0f, 2.0f), 14, 0), Quaternion.identity);
+        cat.BroadcastMessage("setGameController", gameObject);
     }
 
     public void saveACat()
     {
         ++catsSaved;
-        GameObject cat = Instantiate(catPrefab, new Vector3(Random.Range(-2.0f, 2.0f), 14, 0), Quaternion.identity);
-        cat.BroadcastMessage("setGameController", gameObject);
+        newCat();
     }
 
     public void killACat()
     {
         ++catsDead;
-        GameObject cat = Instantiate(catPrefab, new Vector3(Random.Range(-2.0f, 2.0f), 14, 0), Quaternion.identity);
-        cat.BroadcastMessage("setGameController", gameObject);
+        newCat();
     }
 
     // Update is called once per frame
     void Update()
     {
-        dedText.text = catsDead + "";
-        scoreText.text = catsSaved + "";
+        updateText(scoreText, catsSaved);
+        updateText(dedText, catsDead);
+
+        nice();
+    }
+
+    private void nice()
+    {
         if (catsSaved == 69)
             scoreText.text += "\n nice";
     }

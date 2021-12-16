@@ -9,57 +9,45 @@ public class Cat : MonoBehaviour
     public Animator animator;
     public GameObject gameController;
 
-    public void setGameController(GameObject gameControllerInstance)
-    {
-        gameController = gameControllerInstance;
-    }
-
-    public void killACat()
-    {
-        GetComponent<Collider2D>().enabled = false;
-        animator.SetBool("Ded", true);
-    }
-
     private void Start()
     {
         fromInside = true;
         rb = GetComponentInParent<Rigidbody2D>();
     }
 
+    public void setGameController(GameObject gameControllerInstance)
+    {
+        gameController = gameControllerInstance;
+    }
     void OnTriggerEnter2D(Collider2D someObject)
     {
         if (someObject.CompareTag("Player"))
         {
-            Debug.Log("Flickittycat!");
-            // rb.AddForce(new Vector2(0, 300));
+            //Debug.Log("Flickittycat!");
             rb.velocity = new Vector2(0, 0);
             rb.angularVelocity = 0;
             float xDir = someObject.gameObject.transform.position.x - rb.position.x;
             rb.AddForce(new Vector2(-xDir * 220, 420));
-            //Debug.DrawRay(rb.position, new Vector3(-xDir * 80, 320, 9), Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f), 10f, false);
         }
         else if (someObject.CompareTag("Inner"))
             fromInside = true;
         else if (someObject.CompareTag("Outer") && !fromInside)
         {
-            Debug.DrawLine(someObject.transform.position, rb.position, Color.black, 20f, false);
-            Debug.Log("Scored a pointeroo!");
             animator.SetBool("Saved", true);
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
             gameController.SendMessage("saveACat");
         }
 
     }
-
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Inner"))
             fromInside = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void killACat()
     {
-
+        GetComponent<Collider2D>().enabled = false;
+        animator.SetBool("Ded", true);
     }
 }

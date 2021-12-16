@@ -8,7 +8,11 @@ public class CatCollider : MonoBehaviour
     public SpriteRenderer rend;
     public GameObject gameController;
 
-
+    void Start()
+    {
+        rend = GetComponentInParent<SpriteRenderer>();
+        rb = GetComponentInParent<Rigidbody2D>();
+    }
     public void setGameController(GameObject gameControllerInstance)
     {
         gameController = gameControllerInstance;
@@ -17,17 +21,31 @@ public class CatCollider : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            rb.constraints = RigidbodyConstraints2D.FreezeAll;
-            gameObject.GetComponent<Collider2D>().enabled = false;
-            startFading();
-            gameController.SendMessage("killACat");
-            gameObject.transform.parent.gameObject.BroadcastMessage("killACat");
+            killTheCat();
 
         }
     }
+
+    private void killTheCat()
+    {
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        gameObject.GetComponent<Collider2D>().enabled = false;
+        startFading();
+        gameController.SendMessage("killACat");
+        gameObject.transform.parent.gameObject.BroadcastMessage("killACat");
+    }
+
+    public void startFading()
+    {
+        StartCoroutine("FadeOut");
+    }
+
+    // Start is called before the first frame update
+
+
     IEnumerator FadeOut()
     {
-        for (float f = 1f; f >= 0f; f-=0.1f)
+        for (float f = 1f; f >= 0f; f -= 0.1f)
         {
             Vector3 pos = rend.transform.position;
             pos.y += 0.2f;
@@ -39,23 +57,5 @@ public class CatCollider : MonoBehaviour
         }
         Destroy(gameObject.transform.parent.gameObject);
 
-    }
-
-    public void startFading()
-    {
-        StartCoroutine("FadeOut");
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        rend = GetComponentInParent<SpriteRenderer>();
-        rb = GetComponentInParent<Rigidbody2D>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
