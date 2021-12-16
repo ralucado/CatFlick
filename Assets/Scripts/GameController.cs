@@ -10,6 +10,8 @@ public class GameController : MonoBehaviour
     public int catsSaved;
     public int catsDead;
     public GameObject catPrefab;
+    private float lastTimeInterval;
+    int extraCats;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +19,8 @@ public class GameController : MonoBehaviour
         catsDead = 0;
         updateText(scoreText, catsSaved);
         updateText(dedText, catsDead);
+        lastTimeInterval = Time.realtimeSinceStartup;
+        extraCats = 0;
     }
 
     private void updateText(Text text, int num)
@@ -49,6 +53,16 @@ public class GameController : MonoBehaviour
         updateText(dedText, catsDead);
 
         nice();
+        if(extraCats < 3)
+        {
+            if(Time.realtimeSinceStartup - lastTimeInterval > 30)
+            {
+                lastTimeInterval = Time.realtimeSinceStartup;
+                newCat();
+                ++extraCats;
+            }
+
+        }
     }
 
     private void nice()

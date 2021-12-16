@@ -45,15 +45,15 @@ public class CatCollider : MonoBehaviour
 
     IEnumerator FadeOut()
     {
-        for (float f = 1f; f >= 0f; f -= 0.1f)
+        for (float f = 1f; f >= 0f; f -= 0.05f)
         {
             Vector3 pos = rend.transform.position;
-            pos.y += 0.2f;
+            pos.y += 0.1f;
             rend.transform.position = pos;
             Color c = rend.material.color;
             c.a = f;
             rend.material.color = c;
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.01f);
         }
         Destroy(gameObject.transform.parent.gameObject);
 
