@@ -6,13 +6,18 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
     public Text scoreText;
+    public Text dedText;
     public int catsSaved;
+    public int catsDead;
     public GameObject catPrefab;
     // Start is called before the first frame update
     void Start()
     {
         catsSaved = 0;
         scoreText.text = catsSaved.ToString();
+        catsDead = 0;
+        dedText.text = catsDead.ToString();
+
     }
 
     public void saveACat()
@@ -24,7 +29,7 @@ public class GameController : MonoBehaviour
 
     public void killACat()
     {
-        --catsSaved;
+        ++catsDead;
         GameObject cat = Instantiate(catPrefab, new Vector3(Random.Range(-2.0f, 2.0f), 14, 0), Quaternion.identity);
         cat.BroadcastMessage("setGameController", gameObject);
     }
@@ -32,6 +37,7 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        dedText.text = catsDead + "";
         scoreText.text = catsSaved + "";
         if (catsSaved == 69)
             scoreText.text += "\n nice";
