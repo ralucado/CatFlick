@@ -14,9 +14,10 @@ public class Cat : MonoBehaviour
         gameController = gameControllerInstance;
     }
 
-    public void disableCollider()
+    public void killACat()
     {
         GetComponent<Collider2D>().enabled = false;
+        animator.SetBool("Ded", true);
     }
 
     private void Start()

@@ -21,13 +21,17 @@ public class CatCollider : MonoBehaviour
             gameObject.GetComponent<Collider2D>().enabled = false;
             startFading();
             gameController.SendMessage("killACat");
-            gameObject.transform.parent.gameObject.BroadcastMessage("disableCollider");
+            gameObject.transform.parent.gameObject.BroadcastMessage("killACat");
+
         }
     }
     IEnumerator FadeOut()
     {
         for (float f = 1f; f >= 0f; f-=0.1f)
         {
+            Vector3 pos = rend.transform.position;
+            pos.y += 0.2f;
+            rend.transform.position = pos;
             Color c = rend.material.color;
             c.a = f;
             rend.material.color = c;
