@@ -259,5 +259,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fromInside: 0
+  shake: 0
   animator: {fileID: 628488059}
   gameController: {fileID: 0}

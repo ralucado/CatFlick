@@ -9,11 +9,14 @@ public class Player : MonoBehaviour
     public Animator animator;
     public bool direction = true;
     public int activeTouches;
+    public GameObject room;
+    private Vector3 roomstartPos;
     private void Start()
     {
         activeTouches = 0;
         rb = GetComponent<Rigidbody2D>();
         moveSpeed = 4;
+        roomstartPos = room.transform.position;
     }
 
     void OnTriggerEnter2D(Collider2D someObject)
@@ -55,6 +58,7 @@ public class Player : MonoBehaviour
                             direction = true;
                         }
                         setWalkAnimation(true, direction);
+                    
                         break;
 
                     case TouchPhase.Ended:
@@ -68,6 +72,7 @@ public class Player : MonoBehaviour
                 }
             }
            
+            //room.transform.position = roomstartPos + new Vector3(transform.position.x / 20.0f, 0, 0);
         }
     }
 }

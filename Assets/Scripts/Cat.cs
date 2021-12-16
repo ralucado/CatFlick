@@ -6,12 +6,15 @@ public class Cat : MonoBehaviour
 {
     private Rigidbody2D rb;
     public bool fromInside;
+    public bool shake;
     public Animator animator;
     public GameObject gameController;
+    private Vector3 shakePos;
 
     private void Start()
     {
         fromInside = true;
+        shake = false;
         rb = GetComponentInParent<Rigidbody2D>();
     }
 
@@ -33,9 +36,12 @@ public class Cat : MonoBehaviour
             fromInside = true;
         else if (someObject.CompareTag("Outer") && !fromInside)
         {
+            shake = true;
+            shakePos = transform.parent.position;
             animator.SetBool("Saved", true);
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
             gameController.SendMessage("saveACat");
+            gameObject.GetComponent<Collider2D>().enabled = false;
         }
 
     }
@@ -49,5 +55,15 @@ public class Cat : MonoBehaviour
     {
         GetComponent<Collider2D>().enabled = false;
         animator.SetBool("Ded", true);
+    }
+
+    public void Update()
+    {
+        if (shake)
+        {
+            Vector3 pos = shakePos;
+            pos.x += Mathf.Sin(Time.time * 120) * 0.02f;
+            transform.parent.position = pos;
+        }
     }
 }
