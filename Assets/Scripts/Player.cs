@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     {
         activeTouches = 0;
         rb = GetComponent<Rigidbody2D>();
-        moveSpeed = 4;
+        moveSpeed = 5;
         roomstartPos = room.transform.position;
     }
 
